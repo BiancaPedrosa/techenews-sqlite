@@ -1,0 +1,38 @@
+<%- include('partials/header') %>
+<section class="pagina-noticias">
+  <div class="cabecalho-noticias">
+    <div>
+      <h2>📰 Últimas Notícias</h2>
+      <p class="subtitulo">As novidades mais recentes sobre tecnologia, inovação e internet.</p>
+    </div>
+    <a href="/admin" class="botao-nova">+ Nova Notícia</a>
+  </div>
+
+  <div class="filtros-categoria">
+    <a href="/" class="filtro <%= categoriaAtiva === 'todas' ? 'ativo' : '' %>">Todas</a>
+    <a href="/?categoria=Tecnologia" class="filtro <%= categoriaAtiva === 'Tecnologia' ? 'ativo' : '' %>">Tecnologia</a>
+    <a href="/?categoria=Inovação" class="filtro <%= categoriaAtiva === 'Inovação' ? 'ativo' : '' %>">Inovação</a>
+    <a href="/?categoria=Internet" class="filtro <%= categoriaAtiva === 'Internet' ? 'ativo' : '' %>">Internet</a>
+  </div>
+
+  <% if (noticias.length === 0) { %>
+    <div class="sem-noticias">
+      <p>Nenhuma notícia cadastrada ainda. 📭</p>
+    </div>
+  <% } else { %>
+    <div class="grid-noticias">
+      <% noticias.forEach(function(noticia) { %>
+        <article class="card-noticia">
+          <a href="/noticia/<%= noticia.id %>">
+            <img src="<%= noticia.imagem %>" alt="<%= noticia.titulo %>">
+            <div class="info-noticia">
+              <span class="categoria"><%= noticia.categoria %></span>
+              <h3><%= noticia.titulo %></h3>
+            </div>
+          </a>
+        </article>
+      <% }); %>
+    </div>
+  <% } %>
+</section>
+<%- include('partials/footer') %>

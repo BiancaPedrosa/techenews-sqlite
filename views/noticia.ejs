@@ -1,0 +1,12 @@
+<%- include('partials/header') %>
+<section class="pagina-noticia-detalhe">
+  <a href="/" class="link-voltar">&larr; Voltar para as notícias</a>
+  <article class="noticia-completa">
+    <img src="<%= noticia.imagem %>" alt="<%= noticia.titulo %>">
+    <span class="categoria"><%= noticia.categoria %></span>
+    <h2><%= noticia.titulo %></h2>
+    <small>Publicado em: <%= new Date(noticia.data_publicacao).toLocaleString('pt-BR') %></small>
+    <p class="conteudo-noticia"><%= noticia.conteudo %></p>
+  </article>
+</section>
+<%- include('partials/footer') %>

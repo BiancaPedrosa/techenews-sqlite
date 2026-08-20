@@ -1,0 +1,28 @@
+<%- include('partials/header') %>
+<section class="pagina-contato">
+  <h2>➕ Cadastrar Nova Notícia</h2>
+  <form class="formulario-contato" action="/admin" method="POST">
+    <div class="campo">
+      <label for="titulo">Título:</label>
+      <input type="text" id="titulo" name="titulo" placeholder="Título da notícia" required>
+    </div>
+    <div class="campo">
+      <label for="categoria">Categoria:</label>
+      <select id="categoria" name="categoria">
+        <option value="Tecnologia">Tecnologia</option>
+        <option value="Inovação">Inovação</option>
+        <option value="Internet">Internet</option>
+      </select>
+    </div>
+    <div class="campo">
+      <label for="conteudo">Conteúdo:</label>
+      <textarea id="conteudo" name="conteudo" rows="5" placeholder="Texto da notícia..." required></textarea>
+    </div>
+    <div class="campo">
+      <label for="imagem">URL da imagem:</label>
+      <input type="url" id="imagem" name="imagem" placeholder="https://...">
+    </div>
+    <button type="submit" class="botao-enviar">Publicar Notícia</button>
+  </form>
+</section>
+<%- include('partials/footer') %>

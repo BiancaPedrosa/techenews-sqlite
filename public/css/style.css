@@ -1,0 +1,301 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+  background-color: #f4f6f8;
+  color: #1a1a2e;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ===== CABEÇALHO ===== */
+.cabecalho {
+  background-color: #1a1a2e;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  flex-wrap: wrap;
+}
+
+.cabecalho .logo h1 {
+  font-size: 1.5rem;
+}
+
+.menu {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.menu a {
+  color: #ccc;
+  text-decoration: none;
+  font-weight: 500;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: 0.2s;
+}
+
+.menu a:hover,
+.menu a.ativo {
+  color: #fff;
+  border-bottom-color: #4d9de0;
+}
+
+/* ===== CONTEÚDO PRINCIPAL ===== */
+.conteudo-principal {
+  flex: 1;
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+/* ===== PÁGINA DE NOTÍCIAS ===== */
+.cabecalho-noticias {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.subtitulo {
+  color: #666;
+  margin-top: 0.3rem;
+}
+
+/* ===== FILTRO POR CATEGORIA ===== */
+.filtros-categoria {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-bottom: 1.5rem;
+}
+
+.filtro {
+  background: #fff;
+  color: #1a1a2e;
+  text-decoration: none;
+  padding: 0.5rem 1.1rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: 0.2s;
+}
+
+.filtro:hover {
+  background: #eaf3fc;
+  color: #2b6cb0;
+}
+
+.filtro.ativo {
+  background-color: #4d9de0;
+  color: #fff;
+}
+
+.botao-nova {
+  background-color: #4d9de0;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.botao-nova:hover {
+  background-color: #3b82c4;
+}
+
+.sem-noticias {
+  text-align: center;
+  color: #777;
+  padding: 3rem 0;
+}
+
+.grid-noticias {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.card-noticia {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card-noticia:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.card-noticia a {
+  color: inherit;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-noticia img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.info-noticia {
+  padding: 1rem 1.2rem;
+}
+
+.categoria {
+  display: inline-block;
+  background: #eaf3fc;
+  color: #2b6cb0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  margin-bottom: 0.5rem;
+}
+
+.info-noticia h3 {
+  margin-bottom: 0.5rem;
+}
+
+.info-noticia p {
+  color: #555;
+  font-size: 0.95rem;
+  margin-bottom: 0.8rem;
+}
+
+.info-noticia small {
+  color: #999;
+}
+
+/* ===== DETALHE DA NOTÍCIA ===== */
+.link-voltar {
+  display: inline-block;
+  color: #2b6cb0;
+  text-decoration: none;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.link-voltar:hover {
+  text-decoration: underline;
+}
+
+.noticia-completa {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  padding-bottom: 1.5rem;
+}
+
+.noticia-completa img {
+  width: 100%;
+  max-height: 380px;
+  object-fit: cover;
+}
+
+.noticia-completa .categoria {
+  margin: 1.5rem 1.5rem 0;
+}
+
+.noticia-completa h2 {
+  margin: 0.8rem 1.5rem 0.4rem;
+}
+
+.noticia-completa small {
+  display: block;
+  color: #999;
+  margin: 0 1.5rem 1rem;
+}
+
+.conteudo-noticia {
+  margin: 0 1.5rem;
+  line-height: 1.7;
+  color: #333;
+}
+
+/* ===== FORMULÁRIOS (CONTATO E NOVA NOTÍCIA) ===== */
+.formulario-contato {
+  max-width: 500px;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  margin-top: 1.5rem;
+}
+
+.campo {
+  margin-bottom: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.campo label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.botao-enviar {
+  background-color: #1a1a2e;
+  color: #fff;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.botao-enviar:hover {
+  background-color: #33334d;
+}
+
+/* ===== RODAPÉ ===== */
+.rodape {
+  background-color: #1a1a2e;
+  color: #ccc;
+  text-align: center;
+  padding: 1.2rem;
+  font-size: 0.85rem;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 600px) {
+  .cabecalho {
+    flex-direction: column;
+    gap: 0.8rem;
+    text-align: center;
+  }
+
+  .menu {
+    gap: 1rem;
+  }
+}
